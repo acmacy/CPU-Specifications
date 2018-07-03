@@ -1,0 +1,56 @@
+---
+title: "Project: Which CPU?"
+author: "AC"
+output: ioslides_presentation
+---
+
+## About the Application
+
+The Web Application uses the record of the relative performance measure and characteristics of 209 CPUs with a list of its specifications from the CPUS dataset of the MASS library.
+
+When you select the specifications you want, the data about those CPUs that meet the specifications is shown in the RESULTS tab. 
+
+After that, on another tab, PERFORMANCE, the comparitive plot of expected and published performance of these CPUs is shown.
+
+## About the Variables
+
+```{r}
+# Name: Manufacturer and Model
+
+# Cycle Time: In Nanoseconds
+
+# Min and Max Memory: Minimum and Maximum Main Memory in KiloBytes
+
+# Cache Size: In KiloBytes
+
+# Min and Max Channels: Minimum and Maximum Number of Channels
+
+# Performance: Published Performance on a Benchmark Mix Relative 
+# to an IBM 370/158-3
+
+# Estimated Performance: Estimated Performance (by Ein-Dor & 
+# Feldmesser)
+```
+
+
+## Embedded R Code: Exploring Variables
+```{r}
+# Code for Variable Exploration
+library(MASS)
+library(knitr)
+data("cpus")
+s <- apply(cpus[,2:8], 2, range)
+row.names(s) <- c("Lowest", "Highest")
+colnames(s) <- c("Cycle Time", "Min Memory", "Max Memory", "Cache 
+Size", "Min Channels", "Maximum Channels", "Performance")
+kable(s, format = "html")
+```
+
+## The Web Application
+
+1. Shiny App : <a href="https://abhijeetc.shinyapps.io/cpuperf/">Web App on CPUs</a>
+2. Server and UI files: <a href="https://github.com/acmacy/CPU-Specifications">Github Repo</a>
+
+Thank You for Visiting.
+
+
