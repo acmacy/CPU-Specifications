@@ -27,4 +27,4 @@ Estimated Performance: Estimated Performance (by Ein-Dor & Feldmesser).
 
 # Links
 
-You can find the Web Applicaiton here (https://abhijeetc.shinyapps.io/cpuperf/), and the presentation pitch here ().
+You can find the Web Applicaiton here (https://abhijeetc.shinyapps.io/cpuperf/), and the presentation pitch here (http://rpubs.com/achax/CPU).
